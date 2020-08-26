@@ -3,10 +3,10 @@ package com.workspace.utill;
 public class Log {
 
     public static LogWriter logWriter = new LogWriter();
-    public static void error(String msg){
-        logWriter.write(2,msg);
+    public static void error(String message){
+        logWriter.write(Level.ERROR, message);
     }
-    public static void info(String msg){
-        logWriter.write(1,msg);
+    public static void info(String message){
+        logWriter.write(Level.INFO, message);
     }
 }
