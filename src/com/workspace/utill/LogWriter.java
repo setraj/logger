@@ -1,20 +1,22 @@
 package com.workspace.utill;
 
 public class LogWriter {
-    public void write(int level, String msg){
+    public void write(Level level, String message){
         switch (level){
-            case 1:
-                writeToConsole("Writing to console: " + msg);
+            case INFO:
+                writeToConsole("Writing to console: " + message);
                 break;
-            case 2:
-                writeToFile("Writing to file: " + msg);
+            case ERROR:
+                writeToFile("Writing to file: " + message);
                 break;
+            default:
+                System.out.println("Invalid level\n");
         }
     }
-    public void writeToConsole(String msg){
-        System.out.println(msg);
+    private void writeToConsole(String message){
+        System.out.println(message);
     }
-    public void writeToFile(String msg){
-        System.out.println(msg);
+    private void writeToFile(String message){
+        System.out.println(message);
     }
 }
