@@ -1,11 +1,25 @@
 package com.workspace.test;
-import com.workspace.utill.Log;
+import com.workspace.utill.*;
 public class Test {
     public static void main(String[] args){
-        Log.info("Application Started!!");
-        for(int i=0; i<1000000; i++){
-
+        Logger logger = Logger.getLogger();
+        logger.info("Application Started!!");
+        try{
+            int a = 1/0;
+        }catch(Exception e){
+            logger.error(e.getMessage());
         }
-        Log.error("Bootstrapping took a lot of time!");
+        try{
+            int a = 1/0;
+        }catch(Exception e){
+            logger.error(e.getMessage());
+        }
+        try{
+            int a = 1/0;
+        }catch(Exception e){
+            logger.error(e.getMessage());
+        }
+
+        logger.info("Application closing!!");
     }
 }
