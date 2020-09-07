@@ -2,10 +2,10 @@ package com.workspace.utill;
 import com.workspace.io.*;
 public class LogWriter {
     private ConsoleWriter consoleWriter = null;
-    private FileWriter fileWriter = null;
+    private CustomFileWriter customFileWriter = null;
     public LogWriter(){
         consoleWriter = new ConsoleWriter();
-        fileWriter = new FileWriter();
+        customFileWriter = CustomFileWriter.getCustomFileWriter();
     }
     public void write(Level level, String message){
         switch (level){
@@ -13,7 +13,7 @@ public class LogWriter {
                 consoleWriter.write(message);
                 break;
             case ERROR:
-                fileWriter.write(message);
+                customFileWriter.write(message);
                 break;
             default:
                 System.out.println("Invalid level\n");
