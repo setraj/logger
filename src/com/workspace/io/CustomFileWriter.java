@@ -13,7 +13,8 @@ public class CustomFileWriter {
             return customFileWriter;
     }
     private FileWriter openFile() throws IOException{
-            return new FileWriter("../errorlog.txt");
+            //open in append mode
+            return new FileWriter("./errorlog.log", true );
     }
     private void closeFile(){
         try {
@@ -34,8 +35,9 @@ public class CustomFileWriter {
     }
     public void write(String message){
        try{
-           System.out.println("writing to file");
         fileWriter.write(message);
+        fileWriter.flush();
+        //TODO: close file
        }catch (Exception e){
            System.out.println(e.getMessage());
        }

@@ -9,6 +9,17 @@ public class Test {
         }catch(Exception e){
             logger.error(e.getMessage());
         }
+        try{
+            int a = 1/0;
+        }catch(Exception e){
+            logger.error(e.getMessage());
+        }
+        try{
+            int a = 1/0;
+        }catch(Exception e){
+            logger.error(e.getMessage());
+        }
+
         logger.info("Application closing!!");
     }
 }
