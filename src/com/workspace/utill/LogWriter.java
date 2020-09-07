@@ -1,22 +1,22 @@
 package com.workspace.utill;
-
+import com.workspace.io.*;
 public class LogWriter {
+    private ConsoleWriter consoleWriter = null;
+    private FileWriter fileWriter = null;
+    public LogWriter(){
+        consoleWriter = new ConsoleWriter();
+        fileWriter = new FileWriter();
+    }
     public void write(Level level, String message){
         switch (level){
             case INFO:
-                writeToConsole("Writing to console: " + message);
+                consoleWriter.write(message);
                 break;
             case ERROR:
-                writeToFile("Writing to file: " + message);
+                fileWriter.write(message);
                 break;
             default:
                 System.out.println("Invalid level\n");
         }
-    }
-    private void writeToConsole(String message){
-        System.out.println(message);
-    }
-    private void writeToFile(String message){
-        System.out.println(message);
     }
 }
