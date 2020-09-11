@@ -1,9 +1,9 @@
 package com.workspace.io;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.File;
 
 public class CustomFileWriter {
+        private static final String errlogfiledir = "./errorlog.log";
         private static CustomFileWriter customFileWriter=null;
         private static FileWriter fileWriter = null;
     public static CustomFileWriter getCustomFileWriter(){
@@ -35,6 +35,7 @@ public class CustomFileWriter {
     }
     public void write(String message){
        try{
+           System.out.println("writing to file!");
         fileWriter.write(message);
         fileWriter.flush();
         //TODO: close file

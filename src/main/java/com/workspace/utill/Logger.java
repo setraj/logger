@@ -12,10 +12,16 @@ public class Logger {
         }
         return logger;
     }
+    //write to a log file
     public static void error(String message){
         logWriter.write(Level.ERROR, message);
     }
+    //write to console
     public static void info(String message){
         logWriter.write(Level.INFO, message);
+    }
+    //write to message queue
+    public static void debug(String message){
+        logWriter.write(Level.DEBUG, message);
     }
 }

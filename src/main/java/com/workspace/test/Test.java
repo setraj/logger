@@ -1,4 +1,5 @@
 package com.workspace.test;
+import java.util.Map;
 import com.workspace.utill.*;
 public class Test {
     public static void main(String[] args){
@@ -8,16 +9,19 @@ public class Test {
             int a = 1/0;
         }catch(Exception e){
             logger.error(e.getMessage());
+            logger.debug(e.getMessage());
         }
         try{
             int a = 1/0;
         }catch(Exception e){
             logger.error(e.getMessage());
+            logger.debug(e.getMessage());
         }
         try{
             int a = 1/0;
         }catch(Exception e){
             logger.error(e.getMessage());
+            logger.debug(e.getMessage());
         }
 
         logger.info("Application closing!!");
